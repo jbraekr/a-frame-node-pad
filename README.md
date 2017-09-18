@@ -9,6 +9,10 @@ Built with [A-Frame](https://aframe.io), a web framework for building virtual re
 
 Click and drag on desktop. Open it on a smartphone and use the device motion sensors. Or [plug in a VR headset](https://webvr.rocks)!
 
+## Next Steps
+
+use budo locally, as in builerplate.
+
 ## Glitch Docu
 
 Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
@@ -18,7 +22,7 @@ Click `Show` in the header to see your app live. Updates to your code will insta
 Find out more [about Glitch](https://glitch.com/about).
 
 
-### Your Project
+## Your Project
 
 On the front-end,
 - edit `public/client.js`, `public/style.css` and `views/index.html`
