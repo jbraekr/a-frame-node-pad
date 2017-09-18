@@ -10,8 +10,12 @@ Built with [A-Frame](https://aframe.io), a web framework for building virtual re
 Click and drag on desktop. Open it on a smartphone and use the device motion sensors. Or [plug in a VR headset](https://webvr.rocks)!
 
 ## Next Steps
+- use external local aframe 
 
-use budo locally, as in builerplate.
+## done
+
+- use aframe per npm and budo by require. Problem: 5mb download everytime
+- use budo locally, as in builerplate.
 
 ## Glitch Docu
 
