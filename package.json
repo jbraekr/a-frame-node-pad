@@ -8,12 +8,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "budo": "budo modules/client.js --dir views --dir public --title a-frame-node-default-glitch --live --verbose --port 3000 --open",
-    "temp": "budo modules/client.js --dir views --dir public --title a-frame-node-default-glitch --live --verbose --port 3000 --open"
+    "budo": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --live --verbose --port 3000 --open",
+    "temp": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --live --verbose --port 3000 --open"
   },
   "dependencies": {
-    "aframe": "^0.6.1",
-    "express": "^4.15.3"
+      "express": "^4.15.3"
   },
   "engines": {
     "node": "8.x"
