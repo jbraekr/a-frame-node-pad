@@ -9,10 +9,12 @@
   "scripts": {
     "start": "node server.js",
     "budo": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --live --verbose --port 3000 --open",
-    "temp": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --live --verbose --port 3000 --open"
+    "temp": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --live --verbose --port 3000 --open -- -t brfs"
   },
   "dependencies": {
-      "express": "^4.15.3"
+    "brfs": "^1.4.3",
+    "budo": "^10.0.4",
+    "express": "^4.15.3"
   },
   "engines": {
     "node": "8.x"
@@ -27,6 +29,5 @@
     "express"
   ],
   "devDependencies": {
-    "budo": "^10.0.4"
   }
 }

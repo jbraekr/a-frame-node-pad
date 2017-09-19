@@ -9,6 +9,7 @@ Temporary works only locally.
 
 ## Done
 
+- put scene-html automatically in js for better reload (hot or appcache).
 - reload faster
 - host it locally
 - use seperate aframe 
