@@ -1,16 +1,13 @@
 
 # A-Frame Node Project
 
-Serving aframe with node on glitch.
-
-Temporary: works only locally.
+Serving aframe with node/budu on glitch or local.
 
 ## Next Steps
 
-- make budo run on glitch
-
 ## Done
 
+- make budo run on glitch
 - using budo without reload too. Workaround with very long poll time
 - appcache for big files, seems to work with external hosts too
 - using hotreloaded scene
@@ -24,7 +21,7 @@ Temporary: works only locally.
 
 ## Your Project on Glitch
 
-BROKEN
+OUTDATED
 
 On the front-end,
 - edit `modules/client.js`, `public/style.css` and `views/index.html`
