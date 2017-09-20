@@ -3,18 +3,21 @@
 
 Serving aframe with node on glitch.
 
-Temporary works only locally.
+Temporary: works only locally.
 
 ## Next Steps
 
+- use hotreloaded scene
+
 ## Done
 
-- put scene-html automatically in js for better reload (hot or appcache).
+- module-level hotreload with browserify-hmr, really fast
+- put scene-html automatically in js for better reload (hot or appcache)
 - reload faster
 - host it locally
 - use seperate aframe 
 - use aframe per npm and budo by require. Problem: 5mb download everytime
-- use budo locally, as in builerplate.
+- use budo locally, as in builerplate
 
 ## Your Project on Glitch
 

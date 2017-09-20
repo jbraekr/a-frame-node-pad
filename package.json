@@ -8,11 +8,13 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "budo": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --live --verbose --port 3000 --open",
-    "temp": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --live --verbose --port 3000 --open -- -t brfs"
+    "budo": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --verbose --port 3000 --open -- -t brfs -p browserify-hmr",
+    "temp": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --verbose --port 3000 --open -- -t brfs -p browserify-hmr",
+    "death": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --verbose --port 3000 --open -- -t brfs"
   },
   "dependencies": {
     "brfs": "^1.4.3",
+    "browserify-hmr": "^0.3.5",
     "budo": "^10.0.4",
     "express": "^4.15.3"
   },
@@ -28,6 +30,5 @@
     "glitch",
     "express"
   ],
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
