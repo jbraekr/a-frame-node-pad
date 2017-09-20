@@ -7,10 +7,11 @@ Temporary: works only locally.
 
 ## Next Steps
 
-- use hotreloaded scene
+- appcache for big filles
 
 ## Done
 
+- using hotreloaded scene
 - module-level hotreload with browserify-hmr, really fast
 - put scene-html automatically in js for better reload (hot or appcache)
 - reload faster

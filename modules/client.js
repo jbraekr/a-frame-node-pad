@@ -4,6 +4,5 @@ const fs = require('fs');
 //document.writeln("client.js loads");
 console.log('link to client.js');
 console.log(__filename);
-var s = fs.readFileSync(__dirname + '/client.html', 'utf8')
-console.log(s);
-console.log(new Date());
+var s = fs.readFileSync(__dirname + '/client.html', 'utf8');
+document.body.innerHTML=s;
