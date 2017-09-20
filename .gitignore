@@ -3,6 +3,10 @@
 .nano/
 .viminfo
 
+# ignore seperate downloads
+/external/*
+!/external/README.md
+
 # Logs
 logs
 *.log
