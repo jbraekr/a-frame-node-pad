@@ -7,10 +7,11 @@ Temporary: works only locally.
 
 ## Next Steps
 
-- appcache for big filles
+- use budo without reload too
 
 ## Done
 
+- appcache for big files, seems to work with external hosts too
 - using hotreloaded scene
 - module-level hotreload with browserify-hmr, really fast
 - put scene-html automatically in js for better reload (hot or appcache)
