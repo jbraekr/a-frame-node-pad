@@ -7,10 +7,11 @@ Temporary: works only locally.
 
 ## Next Steps
 
-- use budo without reload too
+- make budo run on glitch
 
 ## Done
 
+- using budo without reload too. Workaround with very long poll time
 - appcache for big files, seems to work with external hosts too
 - using hotreloaded scene
 - module-level hotreload with browserify-hmr, really fast
