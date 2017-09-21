@@ -7,6 +7,7 @@ Serving aframe with node/budu on glitch or local.
 
 ## Done
 
+- selfhostet and appcached aframe and inspector, better for local development
 - make budo run on glitch
 - using budo without reload too. Workaround with very long poll time
 - appcache for big files, seems to work with external hosts too
