@@ -7,6 +7,9 @@ Serving aframe with node/budu on glitch or local.
 
 ## Done
 
+- updating a a-element with innerHTML, keeping framestuff alive. but inspector does not see changed dom
+- init-module for two levels of reload
+
 - selfhostet and appcached aframe and inspector, better for local development
 - make budo run on glitch
 - using budo without reload too. Workaround with very long poll time
