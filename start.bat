@@ -1,4 +1,4 @@
 set PORT=3000
-call npm start
+call npm run temp
 echo DONE
 pause
