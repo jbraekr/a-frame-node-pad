@@ -5,7 +5,10 @@ document.body.innerHTML= `
 <a-assets>
 <img id="skyTexture"
       src="sechelt.jpg">
+<img id="boxTexture"
+      src="default_cactus_side.png">
 </a-assets>
 <a-entity id="content"></a-entity>
 </a-scene>
 `;
+//
