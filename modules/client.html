@@ -1,8 +1,11 @@
-<a-entity position="0 -1 0" rotation="0 0 0">
+<a-entity position="0 0 0" rotation="0 0 0">
 
-    <a-box position="-1 0.5 -3" rotation="11 45 0" 
+    <a-box position="-1.5 0.5 -3" rotation="11 45 0" 
         src="#boxTexture" 
-        animation=""
+        animation__pos="property: position; to: -.3 0.5 -3;
+            dir: alternate; dur: 1000; easing: easeInOutSine; loop: true"
+        animation__rot="property: rotation; to: 0 0 0; dir: alternate;
+            loop: true; dur: 500; easing: easeInOutSine"
     ></a-box>
 
     <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E">
@@ -21,6 +24,9 @@
     <a-text position="-2.5 4 -4" scale="4 4" src="#boxTexture" color="yellow" value="Hello, World!"></a-text>
     <a-sky src="#skyTexture" rotation="0 -90 0"></a-sky>
 
-    <a-light type="point" color="blue" position="-4.5 1 -1" intensity="3"></a-light>
+    <a-light type="point" color="blue" position="-9 2 -1" intensity="6"
+        animation="property: position; to: 9 1 1;
+        dir: alternate; dur: 2000; easing: easeInOutSine; loop: true; "
+    ></a-light>
     
 </a-entity>
