@@ -7,6 +7,7 @@ index.html
 aframe.min.js
 aframe-inspector.min.js
 aframe-animation-component.min.js
+#aframe-outline.min.js
 
 NETWORK:
 *
