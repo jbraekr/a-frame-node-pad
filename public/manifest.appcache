@@ -1,10 +1,12 @@
 CACHE MANIFEST
 
-#5
+#7
+
+index.html
 
 aframe.min.js
 aframe-inspector.min.js
-
+aframe-animation-component.min.js
 
 NETWORK:
 *
