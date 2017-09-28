@@ -3,14 +3,19 @@
     <a-box position="-1.5 0.5 -3" rotation="11 45 0" 
         src="#boxTexture" 
         animation__pos="property: position; to: -.3 0.5 -3;
+            pauseEvents: mouseenter;
+            resumeEvents: mouseleave;
             dir: alternate; dur: 1000; easing: easeInOutSine; loop: true"
         animation__rot="property: rotation; to: 0 0 0; dir: alternate;
+            pauseEvents: mouseenter;
+            resumeEvents: mouseleave;
             loop: true; dur: 500; easing: easeInOutSine"
         do-something-once-loaded
     ></a-box>
 
     <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E">
-        <a-ring position="-1 1 0" color="#B96FD3"></a-ring>
+        <a-ring position="-1 1 0" color="#B96FD3"
+        ></a-ring>
         <a-ring position="1 1 0" color="#B96FD3"></a-ring>
     </a-sphere>
     <a-cylinder position="1 0.75 -3" rotation="-90 11 0" radius="0.5" height="1.5" src="#boxTexture"></a-cylinder>
@@ -22,7 +27,16 @@
     <a-torus-knot position="-4.5 2.2 -5" radius="1.5" src="#boxTexture" arc="180" p="8" q="7" radius-tubular="0.06"></a-torus-knot>
 
     <a-dodecahedron position="4.5 1 -5" radius="1.25" src="#boxTexture"></a-dodecahedron>
-    <a-text position="-2.5 4 -4" scale="4 4" src="#boxTexture" color="yellow" value="Hello, World!"></a-text>
+
+    <a-entity position="0 4 -4" rotation="0 -9 0"
+        animation__rot="property: rotation; to: 0 9 0; dir: alternate;
+        loop: true; dur: 5000; easing: easeInOutSine" 
+    >
+    <a-text position="-2.5 0 0" scale="4 4" color="yellow"
+        value="Hello, World!"
+    ></a-text>
+    </a-entity>
+
     <a-sky src="#skyTexture" rotation="0 -90 0"></a-sky>
 
     <a-light type="point" color="blue" position="-9 2 -1" intensity="6"

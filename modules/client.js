@@ -8,7 +8,6 @@ var ud = require('ud');
 
 var compo = {
   init: ud.defn(module, function () {
-    console.log('I am ready!');
   })
 };
 
