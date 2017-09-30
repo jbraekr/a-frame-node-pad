@@ -7,17 +7,31 @@ const hot = require('./hot')(module);
 
 //require('aframe');
 
+function dup(o) {
+    return Object.assign({},o);
+}
+
 const onclick = hot(3, function () {
-    var r = this.getAttribute('rotation');
-    r = Object.assign({},r);
+    var p = dup(this.getAttribute('position'));
+    p.y -= 1.6;
+    var r = dup(this.getAttribute('rotation'));
     r.x -= 90;
     var pla = document.getElementById('player');
-    pla.setAttribute('rotation', r);
-    var p = this.getAttribute('position');
-    p = Object.assign({},p);
-    p.y -= 1.6;
-    pla.setAttribute('position', p);
-});
+    /*
+    pla.setAttribute('animation__pos', {
+        property: position, to: p,
+            dur: 1000, easing: easeInOutSine, dir: normal,
+    });
+    */
+    pla.setAttribute('animation__pos', `
+        property: position; to: ${AFRAME.utils.coordinates.stringify(p)};
+            dur: 4000; easing: easeInOutSine; dir: normal
+    `);
+    pla.setAttribute('animation__rot', `
+        property: rotation; to: ${AFRAME.utils.coordinates.stringify(r)};
+            dur: 4000; easing: easeInOutSine
+    `);
+});//
 
 var compo = {
     init: hot(1, function () {
