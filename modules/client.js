@@ -25,13 +25,16 @@ const onclick = hot(3, function () {
     */
     pla.setAttribute('animation__pos', `
         property: position; to: ${AFRAME.utils.coordinates.stringify(p)};
-            dur: 4000; easing: easeInOutSine; dir: normal
+        dur: 4000; easing: easeInOutSine; dir: normal;
+        restartEvents: restart
     `);
     pla.setAttribute('animation__rot', `
         property: rotation; to: ${AFRAME.utils.coordinates.stringify(r)};
-            dur: 4000; easing: easeInOutSine
+        dur: 4000; easing: easeInOutSine;
+        restartEvents: restart
     `);
-});//
+    pla.emit('restart');
+});
 
 var compo = {
     init: hot(1, function () {
