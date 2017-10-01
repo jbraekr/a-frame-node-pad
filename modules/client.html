@@ -1,56 +1,41 @@
-
 <a-entity id="player">
-<a-ring position="0 1.6 -1" color="yellow"></a-ring>
-<a-ring position="0 3.2 -1" color="yellow"></a-ring>
-<a-camera>
-<a-cursor color="white">
-</a-cursor>
-</a-camera>
+    <a-ring position="0 1.6 -1" color="yellow"></a-ring>
+    <a-ring position="0 3.2 -1" color="yellow"></a-ring>
+    <a-camera>
+        <a-cursor color="white">
+        </a-cursor>
+    </a-camera>
 </a-entity>
 
 
 <a-entity position="0 0 0" rotation="0 0 0">
 
-    <a-box position="-1.5 0.5 -3" rotation="11 45 0" 
-        src="#boxTexture" 
-        animation__pos="property: position; to: -.3 0.5 -3;
+    <a-box position="-1.5 0.5 -3" rotation="11 45 0" src="#boxTexture" animation__pos="property: position; to: -.3 0.5 -3;
             pauseEvents: mouseenter;
             resumeEvents: mouseleave;
-            dir: alternate; dur: 1000; easing: easeInOutSine; loop: true"
-        animation__rot="property: rotation; to: 0 0 0; dir: alternate;
+            dir: alternate; dur: 1000; easing: easeInOutSine; loop: true" animation__rot="property: rotation; to: 0 0 0; dir: alternate;
             pauseEvents: mouseenter;
             resumeEvents: mouseleave;
-            loop: true; dur: 500; easing: easeInOutSine"
-        do-something-once-loaded
-    ></a-box>
+            loop: true; dur: 500; easing: easeInOutSine" do-something-once-loaded></a-box>
 
     <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E">
-        <a-ring position="-1 1 0" color="#B96FD3"
-        ></a-ring>
+        <a-ring position="-1 1 0" color="#B96FD3"></a-ring>
         <a-ring position="1 1 0" color="#B96FD3"></a-ring>
     </a-sphere>
     <a-cylinder position="1 0.75 -3" rotation="-90 11 0" radius="0.5" height="1.5" src="#boxTexture"></a-cylinder>
 
-    <a-plane position="0 0 -4" rotation="-90 0 0" 
-        width="10" height="4" color="green"
-    ></a-plane>
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="4" color="green"></a-plane>
 
     <a-torus-knot position="-4.5 2.2 -5" radius="1.5" src="#boxTexture" arc="180" p="8" q="7" radius-tubular="0.06"></a-torus-knot>
 
     <a-dodecahedron position="4.5 1 -5" radius="1.25" src="#boxTexture"></a-dodecahedron>
 
-    <a-entity position="0 4 -4" rotation="0 -9 0"
-        animation__rot="property: rotation; to: 0 9 0; dir: alternate;
-        loop: true; dur: 5000; easing: easeInOutSine" 
-    >
-    <a-text position="-2.5 0 0" scale="4 4" color="yellow"
-        value="Hello, World!"
-    ></a-text>
+    <a-entity position="0 4 -4" rotation="0 -9 0" animation__rot="property: rotation; to: 0 9 0; dir: alternate;
+        loop: true; dur: 5000; easing: easeInOutSine">
+        <a-text position="-2.5 0 0" scale="4 4" color="yellow" value="Hello, World!"></a-text>
     </a-entity>
 
-    <a-light type="point" color="white" position="-9 2 -1" intensity="6"
-        animation="property: position; to: 9 1 1;
-        dir: alternate; dur: 2000; easing: easeInOutSine; loop: true; "
-    ></a-light>
-    
+    <a-light type="point" color="white" position="-9 2 -1" intensity="6" animation="property: position; to: 9 1 1;
+        dir: alternate; dur: 2000; easing: easeInOutSine; loop: true; "></a-light>
+
 </a-entity>
