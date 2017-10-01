@@ -44,7 +44,7 @@ function dup(o) {
 
     if (!module.hot.data) AFRAME.registerComponent('place', compo);
 
-})()
+})();
 
 console.log(__filename + '#status');
 (function status() {
@@ -56,19 +56,52 @@ console.log(__filename + '#status');
         update: hot(h + 2, function () {
             //console.log(2, this);
         }),
+
+
+        tick: hot(h + 4, function (time, timeDelta) {
+            //console.log(4,this);
+
+            var c = document.getElementsByTagName('a-camera')[0];
+            var pc = c.getAttribute('position').y;
+
+            var f = document.getElementById('fixcam');
+            var pf = f.getAttribute('position').y;
+
+            this.el.setAttribute('text', { value: `c${pc} f${pf} s${new Date().getSeconds()}` });
+        }),
+
+    };
+
+    if (!module.hot.data) AFRAME.registerComponent(h, compo);
+
+})();
+
+(function () {
+    const h = 'fixcam';
+    console.log(__filename + '#' + h);
+    var compo = {
+        init: hot(h + 1, function () {
+            //console.log(1,this);
+        }),
+        update: hot(h + 2, function () {
+            //console.log(2, this);
+        }),
         tick: hot(h + 4, function (time, timeDelta) {
             //console.log(4,this);
             var c = document.getElementsByTagName('a-camera')[0];
             var p = c.getAttribute('position');
-            p = AFRAME.utils.coordinates.stringify(p);
-            this.el.setAttribute('text', { value: p + ' ' + new Date().getSeconds() });
+            this.el.setAttribute('position', { y: -p.y + 1.6 });
+            /*
+            var p2 = this.el.components.position;
+            console.log(p2);
+            p2.data.y = -p.y + 1.6;
+            */
         }),
     };
 
     if (!module.hot.data) AFRAME.registerComponent(h, compo);
 
-})()
-
+})();
 
 var s = fs.readFileSync(__dirname + '/client.html', 'utf8');
 var e = document.getElementById('content');

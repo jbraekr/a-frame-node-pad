@@ -1,14 +1,16 @@
 <a-entity id="player">
     <a-ring position="0 1.6 -1" color="yellow"></a-ring>
     <a-ring position="0 3.2 -1" color="yellow"></a-ring>
-    <a-camera>
-        <a-cursor color="white">
-        </a-cursor>
-        <a-text status position="0 -0.12 -0.5" scale=".1 .1" color="black" value="Hello, Camera!" text="align:center">
-            <a-plane material="shader:flat" scale="3 0.3" color="cyan"></a-plane>
-        </a-text>
-        </a-plane>
-    </a-camera>
+    <a-entity fixcam id="fixcam">
+        <a-camera>
+            <a-cursor color="white">
+            </a-cursor>
+            <a-text status position="0 -0.12 -0.5" scale=".1 .1" color="black" value="Hello, Camera!" text="align:center">
+                <a-plane material="shader:flat" scale="3 0.3" color="cyan"></a-plane>
+            </a-text>
+            </a-plane>
+        </a-camera>
+    </a-entity>
 </a-entity>
 
 
