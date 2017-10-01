@@ -11,7 +11,9 @@ function dup(o) {
     return Object.assign({},o);
 }
 
-const onclick = hot(3, function () {
+(function place() {
+const h="place";
+const onclick = hot(h+3, function () {
     var p = dup(this.getAttribute('position'));
     p.y -= 1.6;
     var r = dup(this.getAttribute('rotation'));
@@ -31,16 +33,19 @@ const onclick = hot(3, function () {
 });
 
 var compo = {
-    init: hot(1, function () {
+    init: hot(h+1, function () {
         //console.log(1,this);
     }),
-    update: hot(2, function () {
+    update: hot(h+2, function () {
         //console.log(2,this);
         this.el.addEventListener('click', onclick)
     })
 };
 
 if (!module.hot.data) AFRAME.registerComponent('place', compo);
+
+})()
+
 
 
 var s = fs.readFileSync(__dirname + '/client.html', 'utf8');
