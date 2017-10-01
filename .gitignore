@@ -4,7 +4,7 @@
 .viminfo
 Session.vim
 .exrc
-/pad.txt
+/pad*
 
 # ignore seperate downloads
 /external/*

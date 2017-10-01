@@ -17,12 +17,6 @@ const onclick = hot(3, function () {
     var r = dup(this.getAttribute('rotation'));
     r.x -= 90;
     var pla = document.getElementById('player');
-    /*
-    pla.setAttribute('animation__pos', {
-        property: position, to: p,
-            dur: 1000, easing: easeInOutSine, dir: normal,
-    });
-    */
     pla.setAttribute('animation__pos', `
         property: position; to: ${AFRAME.utils.coordinates.stringify(p)};
         dur: 4000; easing: easeInOutSine; dir: normal;
