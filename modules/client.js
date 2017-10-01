@@ -67,7 +67,7 @@ console.log(__filename + '#status');
             var f = document.getElementById('fixcam');
             var pf = f.getAttribute('position').y;
 
-            this.el.setAttribute('text', { value: `c${pc} f${pf} s${new Date().getSeconds()}` });
+            this.el.setAttribute('text', { value: `c${pc.toPrecision(3)} f${pf.toPrecision(3)} s${new Date().getSeconds().toLocaleString(undefined,{minimumIntegerDigits:2})}` });
         }),
 
     };
