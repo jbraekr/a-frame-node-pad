@@ -1,5 +1,5 @@
 module.hot && module.hot.accept();
-console.log('link to ' + __filename);
+console.log(__filename);
 
 const init = require('./init');
 const fs = require('fs');
@@ -46,6 +46,28 @@ function dup(o) {
 
 })()
 
+console.log(__filename + '#status');
+(function status() {
+    const h = 'status';
+    var compo = {
+        init: hot(h + 1, function () {
+            //console.log(1,this);
+        }),
+        update: hot(h + 2, function () {
+            //console.log(2, this);
+        }),
+        tick: hot(h + 4, function (time, timeDelta) {
+            //console.log(4,this);
+            var c = document.getElementsByTagName('a-camera')[0];
+            var p = c.getAttribute('position');
+            p = AFRAME.utils.coordinates.stringify(p);
+            this.el.setAttribute('text', { value: p + ' ' + new Date().getSeconds() });
+        }),
+    };
+
+    if (!module.hot.data) AFRAME.registerComponent(h, compo);
+
+})()
 
 
 var s = fs.readFileSync(__dirname + '/client.html', 'utf8');
