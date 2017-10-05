@@ -1,10 +1,13 @@
-# Glitch project is home
+# Glitch project is also home dir
 .ssh/
 .nano/
 .viminfo
 Session.vim
 .exrc
+
+# My ignores
 /pad*
+/package-lock.json
 
 # ignore seperate downloads
 /external/*
