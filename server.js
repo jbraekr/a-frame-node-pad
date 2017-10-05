@@ -2,8 +2,6 @@
 // where your node app starts
 
 // init project
-var browserify = require('browserify');
-var watchify = require('watchify');
 var express = require('express');
 var app = express();
 var fs = require('fs');
@@ -23,24 +21,30 @@ app.get("/", function (request, response) {
   response.redirect('index.html');
 });
 
-// Build bundle https://www.npmjs.com/package/watchify
-var b = browserify({
-  cache: {}, packageCache: {},
-  entries: ['modules/client.js'],
-});
-b.plugin(watchify);
-b.transform(require('brfs'));
-b.plugin(require('browserify-hmr'));
-
-b.on('update', bundle);
-bundle();
-
-function bundle() {
-  b.bundle().pipe(fs.createWriteStream('build/client.js'));
-}
+useWatchify();
 
 // listen for requests :)
 var port = process.env.PORT || 3000;
 var listener = app.listen(port, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+function useWatchify(){
+  const browserify = require('browserify');
+  // Build bundle https://www.npmjs.com/package/watchify
+  var b = browserify({
+    cache: {}, packageCache: {},
+    entries: ['modules/client.js'],
+  });
+  b.plugin(require('watchify'));
+  b.plugin(require('browserify-hmr'));
+  b.transform(require('brfs'));
+
+  b.on('update', bundle);
+  bundle();
+
+  function bundle() {
+    b.bundle().pipe(fs.createWriteStream('build/client.js'));
+  }
+    
+}
