@@ -13,6 +13,10 @@ Session.vim
 /external/*
 !/external/README.md
 
+# ignore builds
+/build/*
+!/build/.placeholder
+
 # Logs
 logs
 *.log
