@@ -16,8 +16,9 @@ app.use(express.static('external'));
 
 app.get('/client.js', browserify(__dirname + '/modules/client.js', {
   plugins: [
-    //{ plugin: 'brfs', options: {} }
-  ]
+    { plugin: 'browserify-hmr', options: {} }
+  ],
+  transform: ['brfs']
 }));
 
 // http://expressjs.com/en/starter/basic-routing.html
