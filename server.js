@@ -21,7 +21,7 @@ app.get("/", function (request, response) {
   response.redirect('index.html');
 });
 
-var mode = process.argv[2] || "live";
+var mode = process.argv[2] || "live";//keep it "live" in git
 console.log(process.argv, mode, new Date());
 switch (mode) {
   case "frozen": useBrowserify(); break;
@@ -52,17 +52,19 @@ function useBrowserifyMiddleware() {
 function useBrowserify(live) {
   console.log('useBrowserify', live);
   const browserify = require('browserify');
-  // Build bundle https://www.npmjs.com/package/watchify
+
   var b = browserify({
     cache: {}, packageCache: {},
     entries: ['modules/client.js'],
+    debug: !!live
   });
 
-  
   if (live) {
     b.plugin(require('watchify'));
     b.plugin(require('browserify-hmr'));
     b.on('update', bundle);
+  } else {
+    b.require('ud/noop', { expose: 'ud' });
   }
 
   b.transform(require('brfs'));
