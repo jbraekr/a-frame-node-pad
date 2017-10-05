@@ -59,10 +59,11 @@ function useBrowserify(live) {
     debug: !!live
   });
 
+  b.plugin(require('watchify'));
+  b.on('update', bundle);
+
   if (live) {
-    b.plugin(require('watchify'));
     b.plugin(require('browserify-hmr'));
-    b.on('update', bundle);
   } else {
     b.require('ud/noop', { expose: 'ud' });
   }
