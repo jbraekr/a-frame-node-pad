@@ -42,7 +42,7 @@ function dup(o) {
         })
     };
 
-    if (!module.hot.data) AFRAME.registerComponent('place', compo);
+    if (!hot.data) AFRAME.registerComponent('place', compo);
 
 })();
 
@@ -72,7 +72,7 @@ console.log(__filename + '#status');
 
     };
 
-    if (!module.hot.data) AFRAME.registerComponent(h, compo);
+    if (!hot.data) AFRAME.registerComponent(h, compo);
 
 })();
 
@@ -99,7 +99,7 @@ console.log(__filename + '#status');
         }),
     };
 
-    if (!module.hot.data) AFRAME.registerComponent(h, compo);
+    if (!hot.data) AFRAME.registerComponent(h, compo);
 
 })();
 
