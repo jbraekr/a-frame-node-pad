@@ -7,10 +7,9 @@
   "description": "What am I about?",
   "main": "server.js",
   "scripts": {
-    "start": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --verbose --poll 31536000 --port $PORT -- -t brfs",
-    "budo": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --verbose --port 3000 --open -- -t brfs -p browserify-hmr",
-    "temp": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --verbose --port 3000 --open -- -t brfs -p browserify-hmr",
-    "sleepy": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --verbose --poll 31536000 --port 3000 --open -- -t brfs"
+    "start": "node server.js frozen",
+    "live": "node server.js live",
+    "budo": "budo modules/client.js --dir views --dir public --dir external --title a-frame-node-default-glitch --verbose --port 3000 --open -- -t brfs -p browserify-hmr"
   },
   "dependencies": {
     "brfs": "^1.4.3",

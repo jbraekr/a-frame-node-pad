@@ -21,7 +21,13 @@ app.get("/", function (request, response) {
   response.redirect('index.html');
 });
 
-useWatchify();
+var mode = process.argv[2] || "live";
+console.log(process.argv, mode, new Date());
+switch (mode) {
+  case "frozen": useBrowserify(); break;
+  case "live": useBrowserify(true); break;
+  default: process.exit(1);
+}
 //useBrowserifyMiddleware();
 
 // listen for requests :)
@@ -43,22 +49,28 @@ function useBrowserifyMiddleware() {
   }));
 }
 
-function useWatchify(){
+function useBrowserify(live) {
+  console.log('useBrowserify', live);
   const browserify = require('browserify');
   // Build bundle https://www.npmjs.com/package/watchify
   var b = browserify({
     cache: {}, packageCache: {},
     entries: ['modules/client.js'],
   });
-  b.plugin(require('watchify'));
-  b.plugin(require('browserify-hmr'));
+
+  
+  if (live) {
+    b.plugin(require('watchify'));
+    b.plugin(require('browserify-hmr'));
+    b.on('update', bundle);
+  }
+
   b.transform(require('brfs'));
 
-  b.on('update', bundle);
   bundle();
 
   function bundle() {
     b.bundle().pipe(fs.createWriteStream('build/client.js'));
   }
-    
+
 }
